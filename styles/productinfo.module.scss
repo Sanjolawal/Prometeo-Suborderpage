@@ -1,0 +1,55 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  row-gap: 30px;
+  column-gap: 2.67%;
+  padding: 25px;
+  background: rgb(255, 255, 255, 0.5);
+  @media all and (max-width: 1100px) {
+    grid-template-columns: repeat(2, 49%);
+  }
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+.secondCon {
+  background: rgb(255, 255, 255, 0.5);
+}
+.h5 {
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.con {
+  background-color: rgb(239, 240, 246);
+  border-radius: 16px;
+  padding: 10px;
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+}
+.h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px 0 10px 25px;
+  font-family: "Poppins", sans-serif;
+}
+.conditionCon {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  column-gap: 2%;
+  row-gap: 24px;
+  @media all and (max-width: 1100px) {
+    grid-template-columns: repeat(2, 49%);
+  }
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 92%);
+  }
+}
+.conWrapper {
+  background-color: rgb(239, 240, 246);
+  padding: 10px;
+  border-radius: 16px;
+  margin: 15px 0 35px 30px;
+}

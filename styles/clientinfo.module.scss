@@ -1,0 +1,30 @@
+.h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px 0 25px 0;
+  font-family: "Poppins", sans-serif;
+}
+.h6 {
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 48.75%);
+  row-gap: 20px;
+  column-gap: 2.5%;
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 100%);
+    column-gap: 0%;
+  }
+}
+.con {
+  background: rgb(239, 240, 246);
+  border-radius: 16px;
+  padding: 5px 10px 5px 15px;
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+}

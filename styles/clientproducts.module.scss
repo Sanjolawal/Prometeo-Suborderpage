@@ -1,0 +1,112 @@
+.mainContainer {
+  background-color: rgb(239, 240, 246);
+  border-radius: 16px;
+  margin: 30px 0 30px 0;
+}
+.mainContainer2 {
+  background-color: rgb(239, 240, 246);
+  border-radius: 16px;
+  margin: 30px 0 30px 0;
+  padding-bottom: 25px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  img {
+    margin-right: 20px;
+  }
+}
+.div {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-around;
+  @media all and (max-width: 1050px) {
+    width: 25%;
+  }
+  @media all and (max-width: 900px) {
+    width: 30%;
+  }
+  @media all and (max-width: 750px) {
+    width: 50%;
+  }
+  @media all and (max-width: 500px) {
+    width: 70%;
+  }
+}
+
+.h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0 10px 0;
+  font-family: "Poppins", sans-serif;
+}
+.listContainer {
+  border-top: 2px solid rgb(0, 0, 0, 0.1);
+  margin: 14px 20px 0 20px;
+  padding-top: 10px;
+}
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(1, 15% 35% 25% 20% 5%);
+  padding: 15px 0 15px 0;
+  cursor: pointer;
+  p {
+    text-align: start;
+    // background-color: red;
+  }
+}
+.paragraph {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgb(0, 0, 0, 0.5);
+}
+.paragraph:nth-child(1) {
+  margin-left: 15px;
+}
+.paragraph:nth-child(4) {
+  text-align: start;
+}
+.downarrow1 {
+  rotate: 0deg;
+}
+.downarrow2 {
+  rotate: 180deg;
+}
+.downarrow {
+  justify-self: end;
+  rotate: 0deg;
+}
+.downarrow3 {
+  justify-self: end;
+  rotate: 180deg;
+}
+.btncontainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 12px 0;
+}
+.btncon {
+  display: flex;
+  width: fit-content;
+  justify-content: space-around;
+  border: 2px solid black;
+  border-radius: 16px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.btncon:hover {
+  background: black;
+  color: white;
+}
+.backarrow {
+  rotate: 90deg;
+  margin-right: 12px;
+}
+.nextarrow {
+  rotate: 270deg;
+  margin-left: 12px;
+}
