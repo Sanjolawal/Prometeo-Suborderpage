@@ -1,0 +1,254 @@
+.main {
+  display: flex;
+  grid-template-columns: repeat(1, 100% 0% 0%);
+}
+.div {
+  z-index: 0;
+  width: 0%;
+  display: none;
+}
+.div1 {
+  width: 98%;
+  z-index: 100;
+  border-top: 2px solid rgb(0, 0, 0, 0.1);
+  padding: 30px 0 30px 0;
+  .p {
+    color: red;
+    margin: 0;
+    padding: 0;
+  }
+}
+.h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.p2 {
+  background-color: rgb(30, 169, 107);
+}
+.file {
+  display: none;
+}
+
+.inputsContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 24% 24% 24% 24%);
+  column-gap: 1.325%;
+  row-gap: 30px;
+  background: white;
+  align-items: center;
+  padding: 26px 20px 26px 20px;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: repeat(1, 48% 48%);
+  }
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 96%);
+  }
+}
+.input {
+  background: rgb(239, 240, 246);
+  border-radius: 16px;
+  padding: 10px 3px 10px 15px;
+  width: 100%;
+}
+
+.variant {
+  display: grid;
+  grid-template-columns: repeat(1, 60% 35%);
+  column-gap: 5%;
+  p {
+    width: 155%;
+  }
+}
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(3, 48% 23% 23%);
+  column-gap: 2%;
+  row-gap: 20px;
+  background-color: white;
+  padding: 0px 20px 26px 20px;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: repeat(1, 62% 32%);
+  }
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 92%);
+  }
+}
+.variant2 {
+  display: grid;
+  grid-template-columns: repeat(4, 26% 26% 26% 16%);
+  column-gap: 2%;
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(4, 25% 25% 25% 23%);
+  }
+}
+.variant3 {
+  display: grid;
+  grid-template-columns: repeat(1, 60% 35%);
+  column-gap: 10%;
+}
+.testing {
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+  border-radius: 16px;
+  background: rgb(239, 240, 246);
+}
+
+.expiration {
+  padding: 0px 20px 26px 20px;
+  background-color: white;
+}
+.first_btn {
+  border-radius: 16px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px 10px 15px;
+  width: 8%;
+  margin: 20px 0 0px 0;
+  margin-left: 92%;
+  cursor: pointer;
+  @media all and (max-width: 1300px) {
+    width: 12%;
+    margin-left: 88%;
+  }
+  @media all and (max-width: 900px) {
+    width: 15%;
+    margin-left: 85%;
+  }
+  @media all and (max-width: 700px) {
+    width: 20%;
+    margin-left: 80%;
+  }
+  @media all and (max-width: 600px) {
+    width: 30%;
+    margin-left: 70%;
+  }
+  @media all and (max-width: 400px) {
+    width: 40%;
+    margin-left: 60%;
+  }
+}
+.first_btn:hover {
+  color: white;
+  background: black;
+}
+.firstbtnarrow {
+  rotate: 270deg;
+}
+.mainCondiv1 {
+  background: white;
+  padding: 20px 0 30px 0;
+  @media all and (max-width: 600px) {
+    margin-right: 2%;
+  }
+}
+.counter2firstcon {
+  display: flex;
+  padding: 10px 20px 10px 15px;
+  div:nth-child(2) {
+    margin-left: 30px;
+  }
+  @media all and (max-width: 600px) {
+    display: block;
+    div:nth-child(2) {
+      margin: 20px 0 0 0;
+    }
+  }
+}
+.textarea {
+  margin: 30px 0px 30px 15px;
+  padding: 30px 10px 30px 15px;
+  border-radius: 16px;
+  background: rgb(239, 240, 246);
+  width: 21%;
+  @media all and (max-width: 1350px) {
+    width: 25%;
+  }
+  @media all and (max-width: 1050px) {
+    width: 35%;
+  }
+  @media all and (max-width: 750px) {
+    width: 92%;
+  }
+}
+.h2 {
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+.test2 {
+  padding: 0px 25px 10px 25px;
+}
+.label {
+  background: white;
+  border-radius: 16px;
+  margin: 0px 0 0px 0px;
+  padding: 10px 25px 10px 25px;
+  background: rgb(239, 240, 246);
+  display: flex;
+  width: 21%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  p {
+    color: black;
+  }
+  @media all and (max-width: 1350px) {
+    width: 25%;
+  }
+  @media all and (max-width: 1050px) {
+    width: 35%;
+  }
+  @media all and (max-width: 750px) {
+    width: 100%;
+  }
+}
+.p1 {
+  color: green;
+}
+.counter2btncon {
+  display: flex;
+  justify-content: space-between;
+  .btn {
+    border-radius: 16px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    // color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px 10px 15px;
+    width: 8%;
+    margin: 20px 0 0px 0;
+    cursor: pointer;
+    @media all and (max-width: 1300px) {
+      width: 12%;
+    }
+    @media all and (max-width: 900px) {
+      width: 15%;
+    }
+    @media all and (max-width: 700px) {
+      width: 20%;
+    }
+    @media all and (max-width: 600px) {
+      width: 30%;
+    }
+    @media all and (max-width: 400px) {
+      width: 40%;
+    }
+  }
+  .btn:hover {
+    color: white;
+    background: black;
+  }
+}
+.backarrow {
+  rotate: 90deg;
+}
+
+.test {
+  background: rgb(240, 240, 238);
+}

@@ -1,0 +1,79 @@
+.div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid rgb(0, 0, 0, 0.1);
+  padding-top: 24px;
+  margin: 40px 0 20px 0;
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+.plus {
+  cursor: pointer;
+}
+.main {
+  background: rgb(239, 240, 246);
+  border-radius: 16px;
+  margin: 24px 0 24px 0;
+  padding: 0 0 0px 24px;
+}
+.customselectcontainer {
+  display: grid;
+  grid-template-columns: repeat(1, 20% 25% 50%);
+  column-gap: 2.5%;
+  justify-content: space-between;
+  align-items: center;
+  @media all and (max-width: 1300px) {
+    grid-template-columns: repeat(1, 30% 25% 40%);
+  }
+  @media all and (max-width: 900px) {
+    grid-template-columns: repeat(1, 40% 25% 30%);
+  }
+  @media all and (max-width: 700px) {
+    grid-template-columns: repeat(1, 90%);
+    column-gap: 0%;
+  }
+}
+.available {
+  @media all and (max-width: 700px) {
+    // background: red;
+    margin: 0 0 20px 0;
+  }
+}
+
+.customselect {
+  position: relative;
+  width: 100%;
+  // background: yellow;
+}
+.select {
+  margin: 24px 0 24px 0;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 14px 10px 14px 16px;
+  appearance: none;
+  width: 100%;
+  @media all and (max-width: 700px) {
+    // margin: 24px 0 0 0;
+    // padding: 10px 10px 10px 16px;
+  }
+}
+.downarrow {
+  justify-self: end;
+  margin-right: 50px;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 15px;
+  margin: 0 20px 0 0px;
+  rotate: 270deg;
+  pointer-events: none;
+}

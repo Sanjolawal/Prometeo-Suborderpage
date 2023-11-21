@@ -5,6 +5,7 @@ import Clientinformation from "@/components/clientinformation";
 import Clientaddress from "@/components/clientaddress";
 import Clientdocument from "@/components/clientdocument";
 import Clientproducts from "@/components/clientproducts";
+import Productallocation from "@/components/productallocation";
 import style from "@/styles/style.module.scss";
 
 export default function page() {
@@ -25,6 +26,7 @@ export default function page() {
       <Clientaddress info={response} />
       <Clientdocument info={response} />
       <Clientproducts info={response} />
+      <Productallocation info={response} />
     </div>
   );
 }
