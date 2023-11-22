@@ -8,7 +8,7 @@ import Clientproducts from "@/components/clientproducts";
 import Productallocation from "@/components/productallocation";
 import style from "@/styles/style.module.scss";
 
-export default function page() {
+export default function Page() {
   const [response, setresponse] = useState([]);
   useEffect(() => {
     async function clientInfo() {

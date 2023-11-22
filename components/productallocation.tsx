@@ -73,16 +73,19 @@ export default function Productallocation(props: any) {
                 }}
               >
                 <option>Choose Warehouse</option>
-                {orders.map((warehouses: { warehouse_name: string }) => {
-                  return (
-                    <option
-                      value={warehouses.warehouse_name}
-                      className={productallocation.option}
-                    >
-                      {warehouses.warehouse_name}
-                    </option>
-                  );
-                })}
+                {orders.map(
+                  (warehouses: { warehouse_name: string; id: number }) => {
+                    return (
+                      <option
+                        value={warehouses.warehouse_name}
+                        className={productallocation.option}
+                        key={warehouses.id}
+                      >
+                        {warehouses.warehouse_name}
+                      </option>
+                    );
+                  }
+                )}
               </select>
               <Image
                 src={downarrow}
@@ -94,7 +97,11 @@ export default function Productallocation(props: any) {
               {available ? `${available} boxes available` : ``}
             </p>
           </div>
-          <Allocationinfo info={response[0].sub_orders} state={value} />
+          <Allocationinfo
+            info={response}
+            state={value}
+            box_available={available}
+          />
         </div>
       ) : (
         ""

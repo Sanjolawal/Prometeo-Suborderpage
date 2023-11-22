@@ -10,7 +10,7 @@ export default function Clientaddress(props: any) {
         {response.map((item: any) => {
           const { zip_code, street, city, region, country } = item.user_address;
           return (
-            <div className={clientaddress.container}>
+            <div className={clientaddress.container} key={item}>
               <div className={clientaddress.con}>
                 <h6 className={clientaddress.h6}>Street</h6>
                 <p>{street}</p>

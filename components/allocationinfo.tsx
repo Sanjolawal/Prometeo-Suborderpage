@@ -1,44 +1,51 @@
 import allocationinfo from "@/styles/allocationinfo.module.scss";
+import Productlist from "./productlist";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import downarrow from "@/public/downarrow.svg";
 import plus from "@/public/plus.svg";
 
-export default function Allocationinfo(props: { info: []; state: string }) {
+export default function Allocationinfo(props: {
+  info: [{ sub_orders: []; products: [] }];
+  state: string;
+  box_available: string;
+}) {
   type formvalues = {
     warehouse: string;
     storage: number;
     arrival_date: string;
     arrival_time: string;
-    product_name: string;
+    // product_name: string;
     duration: string;
-    quantity: string;
-    packing_type: string;
-    serial_number: string;
-    length: number;
-    width: number;
-    height: number;
-    measure: string;
-    weight: number;
-    weight2: string;
-    price: number;
-    price2: string;
-    expiration: string;
+    // quantity: string;
+    // packing_type: string;
+    // serial_number: string;
+    // length: number;
+    // width: number;
+    // height: number;
+    // measure: string;
+    // weight: number;
+    // weight2: string;
+    // price: number;
+    // price2: string;
+    // expiration: string;
     document_number: number;
     document_type: string;
     description: string;
     file: any;
-    test: string;
+    // test: string;
   };
 
   const form = useForm<formvalues>();
   const { register, handleSubmit, formState, trigger, reset } = form;
   const { errors } = formState;
-  const sub_orders = props.info;
+  const sub_orders = props.info[0].sub_orders;
+  const products = props.info[0].products;
   const [counter, setcounter] = useState(1);
   const [files, setfiles] = useState("");
   const state = props.state;
+  let available = props.box_available;
 
   const Prev_section = () => {
     setcounter(counter - 1);
@@ -63,12 +70,18 @@ export default function Allocationinfo(props: { info: []; state: string }) {
     setfiles("file uploaded");
   };
 
-  const onSubmit = (data: formvalues) => {
+  const onSubmit = async (data: formvalues) => {
     const formData = new FormData();
     formData.append(`files`, data.file[0]);
     data = { ...data, file: data.file[0].name };
     formData.append("data", JSON.stringify(data));
     console.log("form submitted", data);
+
+    const senddata = await fetch(`/api`, {
+      method: `POST`,
+      body: formData,
+    });
+
     Next_section();
     setfiles("");
     reset();
@@ -135,7 +148,7 @@ export default function Allocationinfo(props: { info: []; state: string }) {
                 {errors.arrival_time ? `Arrival time type is required` : ``}
               </p>
             </div>
-            <div>
+            {/* <div>
               <input
                 className={allocationinfo.input}
                 type="text"
@@ -183,9 +196,11 @@ export default function Allocationinfo(props: { info: []; state: string }) {
               <p className={allocationinfo.p}>
                 {errors.serial_number ? `Serial number is required` : ``}
               </p>
-            </div>
+            </div> */}
           </div>
-          <div className={allocationinfo.container2}>
+          <h1 className={allocationinfo.h2}>All products</h1>
+          <Productlist productlists={products} />
+          {/* <div className={allocationinfo.container2}>
             <div className={allocationinfo.variant2}>
               <div>
                 <input
@@ -285,7 +300,7 @@ export default function Allocationinfo(props: { info: []; state: string }) {
             <p className={allocationinfo.p}>
               {errors.expiration ? `Expiration day is required` : ``}
             </p>
-          </div>
+          </div> */}
           <div
             className={allocationinfo.first_btn}
             onClick={async () => {
@@ -293,16 +308,16 @@ export default function Allocationinfo(props: { info: []; state: string }) {
                 "storage",
                 "arrival_date",
                 "arrival_time",
-                "product_name",
-                "quantity",
-                "packing_type",
-                "serial_number",
-                "length",
-                "width",
-                "height",
-                "weight",
-                "price",
-                "expiration",
+                // "product_name",
+                // "quantity",
+                // "packing_type",
+                // "serial_number",
+                // "length",
+                // "width",
+                // "height",
+                // "weight",
+                // "price",
+                // "expiration",
               ]);
               test ? Next_section() : ``;
             }}
@@ -389,32 +404,66 @@ export default function Allocationinfo(props: { info: []; state: string }) {
               />
               <button type="button">Back</button>
             </div>
-            <div className={allocationinfo.btn}>
-              <button
-                type="button"
-                onClick={async () => {
-                  const test = await trigger([
-                    "document_number",
-                    "document_type",
-                    "file",
-                  ]);
-                  test ? Next_section() : ``;
-                }}
-              >
-                Next
-              </button>
+            <button
+              type="button"
+              onClick={async () => {
+                const test = await trigger([
+                  "document_number",
+                  "document_type",
+                  "file",
+                ]);
+                test ? Next_section() : ``;
+              }}
+              className={allocationinfo.btn}
+            >
+              <p>Next</p>
               <Image
                 src={downarrow}
                 alt="downarrow"
                 className={allocationinfo.firstbtnarrow}
               />
-            </div>
+            </button>
           </div>
         </div>
         <div
           className={counter === 3 ? allocationinfo.div1 : allocationinfo.div}
         >
-          <input
+          <h1 className={allocationinfo.h1}>Box allocation</h1>
+          <div className={allocationinfo.main3}>
+            <div className={allocationinfo.boxtypecon}>
+              <select className={allocationinfo.boxtype}>
+                <option>Select box type</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+              <p>{available ? `${available} products` : ``}</p>
+            </div>
+            <section className={allocationinfo.available}>
+              <h6>Quantity available</h6>
+              <p>x{available}</p>
+            </section>
+            <div className={allocationinfo.boxdetails}>
+              <section>
+                <h6>Quantity</h6>
+                <p>x20</p>
+              </section>
+              <section>
+                <h6>Weight Capacity</h6>
+                <p>50kg</p>
+              </section>
+              <section>
+                <h6>Dimensions (L x W x H)</h6>
+                <p>120 x 140 x 150 cm</p>
+              </section>
+              <section>
+                <h6>Current weight</h6>
+                <p>51kg</p>
+              </section>
+            </div>
+          </div>
+
+          {/* <input
             type="text"
             placeholder="testing"
             id="test"
@@ -423,36 +472,49 @@ export default function Allocationinfo(props: { info: []; state: string }) {
             })}
             className={allocationinfo.test}
           />
-          <p>{errors.test ? `test is required` : ``}</p>
-          <button
-            type="button"
-            onClick={() => {
-              Prev_section();
-            }}
-          >
-            Back
-          </button>
-          <button
-            type="submit"
-            onClick={async () => {
-              await trigger("test");
-            }}
-          >
-            submit
-          </button>
+          <p>{errors.test ? `test is required` : ``}</p> */}
+          <div className={allocationinfo.counter2btncon}>
+            <div
+              onClick={() => {
+                Prev_section();
+              }}
+              className={allocationinfo.btn}
+            >
+              <Image
+                src={downarrow}
+                alt="downarrow"
+                className={allocationinfo.backarrow}
+              />
+              <button type="button">Back</button>
+            </div>
+            <button type="submit" className={allocationinfo.btn}>
+              <p>Submit</p>
+              <Image
+                src={downarrow}
+                alt="downarrow"
+                className={allocationinfo.firstbtnarrow}
+              />
+            </button>
+          </div>
         </div>
 
         <div
           className={counter === 4 ? allocationinfo.div1 : allocationinfo.div}
         >
-          <p>Form Submitted succesfully</p>
+          <p className={allocationinfo.p4}>Form Submitted succesfully</p>
           <button
             type="button"
             onClick={() => {
               setcounter(1);
             }}
+            className={allocationinfo.back4}
           >
-            Back
+            <Image
+              src={downarrow}
+              alt="downarrow"
+              className={allocationinfo.backarrow}
+            />
+            <p> Back</p>
           </button>
         </div>
       </form>

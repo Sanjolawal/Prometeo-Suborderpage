@@ -9,7 +9,7 @@ export default function Clientinformation(props: any) {
       <div>
         {response.map((item: any) => {
           return (
-            <div className={clientinfo.container}>
+            <div className={clientinfo.container} key={item}>
               <div className={clientinfo.con}>
                 <h6 className={clientinfo.h6}>Company name</h6>
                 <p>{item.company_name}</p>

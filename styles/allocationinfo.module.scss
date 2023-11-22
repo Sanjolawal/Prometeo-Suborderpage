@@ -18,10 +18,14 @@
     padding: 0;
   }
 }
-.h1 {
+.h1,
+.h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
+}
+.h2 {
+  margin-top: 20px;
 }
 .p2 {
   background-color: rgb(30, 169, 107);
@@ -139,6 +143,7 @@
 .firstbtnarrow {
   rotate: 270deg;
 }
+
 .mainCondiv1 {
   background: white;
   padding: 20px 0 30px 0;
@@ -217,13 +222,14 @@
     border: 2px solid black;
     display: flex;
     justify-content: space-between;
-    // color: black;
+    align-items: center;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 15px 10px 15px;
     width: 8%;
     margin: 20px 0 0px 0;
     cursor: pointer;
+
     @media all and (max-width: 1300px) {
       width: 12%;
     }
@@ -248,7 +254,104 @@
 .backarrow {
   rotate: 90deg;
 }
+.main3 {
+  background: white;
+  margin-top: 20px;
+  padding: 20px 15px 30px 15px;
+}
+.boxtypecon {
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+.boxtype {
+  margin: 24px 0 24px 0;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 14px 10px 14px 16px;
+  background: rgb(239, 240, 246);
+}
+.available {
+  padding: 10px 105px 10px 25px;
+  margin: 20px 0 20px 0;
+  border-radius: 16px;
+  background: rgb(239, 240, 246);
+  width: fit-content;
+  h6 {
+    font-size: 12px;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+.boxdetails {
+  display: grid;
+  grid-template-columns: repeat(4, 23.5%);
+  column-gap: 2%;
+  row-gap: 25px;
+  section {
+    padding: 10px 15px 10px 15px;
+    width: 100%;
+    border-radius: 16px;
+    background: rgb(239, 240, 246);
+    h6 {
+      font-size: 12px;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
+  @media all and (max-width: 1100px) {
+    grid-template-columns: repeat(2, 47%);
+  }
+  @media all and (max-width: 600px) {
+    grid-template-columns: repeat(1, 94%);
+  }
+}
+.p4 {
+  color: green;
+  font-size: 34px;
+  margin: 0px 0 40px 0;
+  @media all and (max-width: 700px) {
+    font-size: 22px;
+  }
+}
+.back4 {
+  border-radius: 16px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px 10px 15px;
+  width: 8%;
+  margin: 20px 0 0px 0;
+  cursor: pointer;
 
+  @media all and (max-width: 1300px) {
+    width: 12%;
+  }
+  @media all and (max-width: 900px) {
+    width: 15%;
+  }
+  @media all and (max-width: 700px) {
+    width: 20%;
+  }
+  @media all and (max-width: 600px) {
+    width: 30%;
+  }
+  @media all and (max-width: 400px) {
+    width: 40%;
+  }
+}
+.back4:hover {
+  color: white;
+  background: black;
+}
 .test {
   background: rgb(240, 240, 238);
 }

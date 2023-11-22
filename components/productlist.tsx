@@ -41,11 +41,11 @@ export default function Productlist(props: any) {
           return (
             <>
               <div
-                key={product.box_type_id}
                 className={clientproducts.productlist}
                 onClick={() => {
                   Showmoreinfo(product.box_type_id);
                 }}
+                key={product.box_type_id}
               >
                 <p className={clientproducts.paragraph}>
                   No {product.box_type_id}
@@ -88,7 +88,7 @@ export default function Productlist(props: any) {
               alt="arrow"
               className={clientproducts.backarrow}
             />
-            <button>Back</button>
+            <button type="button">Back</button>
           </div>
           <div
             className={clientproducts.btncon}
@@ -96,7 +96,7 @@ export default function Productlist(props: any) {
               Nextpage();
             }}
           >
-            <button>Next</button>
+            <button type="button">Next</button>
             <Image
               src={downarrow}
               alt="arrow"
@@ -114,11 +114,11 @@ export default function Productlist(props: any) {
         return (
           <>
             <div
-              key={product.box_type_id}
               className={clientproducts.productlist}
               onClick={() => {
                 Showmoreinfo(product.box_type_id);
               }}
+              key={product.box_type_id}
             >
               <p className={clientproducts.paragraph}>
                 No {product.box_type_id}

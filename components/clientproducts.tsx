@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Clientproducts(props: any) {
   const response = props.info;
+
   const [first, setfirst] = useState(true);
   const Showproducts = () => {
     setfirst(!first);
