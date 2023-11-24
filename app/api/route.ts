@@ -15,8 +15,9 @@ export async function POST(request: Request) {
   try {
     const formData = await request.formData();
     const files = formData.get("files");
-    const data = formData.get("data");
-    console.log(formData, files, data);
+    const data: any = formData.get("data");
+    const data_recieved = JSON.parse(data);
+    console.log(data_recieved);
     return Response.json({ testing: `testing` });
   } catch (error) {
     return Response.json(error);

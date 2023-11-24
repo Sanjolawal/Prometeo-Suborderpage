@@ -100,7 +100,6 @@ export default function Productallocation(props: any) {
           <Allocationinfo
             info={response}
             state={value}
-            box_available={available}
           />
         </div>
       ) : (

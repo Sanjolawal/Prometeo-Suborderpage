@@ -214,6 +214,7 @@
 .p1 {
   color: green;
 }
+
 .counter2btncon {
   display: flex;
   justify-content: space-between;
@@ -304,6 +305,12 @@
       font-weight: bold;
     }
   }
+  .input2 {
+    background: rgb(239, 240, 246);
+    border-radius: 16px;
+    padding: 2px 3px 2px 3px;
+    width: 100%;
+  }
   @media all and (max-width: 1100px) {
     grid-template-columns: repeat(2, 47%);
   }
@@ -317,6 +324,52 @@
   margin: 0px 0 40px 0;
   @media all and (max-width: 700px) {
     font-size: 22px;
+  }
+}
+.products {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0 -25px 0;
+  .image {
+    cursor: pointer;
+  }
+}
+.productInputs {
+  display: grid;
+  grid-template-columns: repeat(1, 22.5% 22.5% 22.5% 22.5% 6%);
+  column-gap: 1%;
+  row-gap: 25px;
+  align-items: end;
+  margin-top: 20px;
+  .p3 {
+    color: red;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 20px;
+  }
+  section {
+    padding: 10px 15px 10px 15px;
+    width: 100%;
+    border-radius: 16px;
+    background: rgb(239, 240, 246);
+    h6 {
+      font-size: 12px;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
+  .input2 {
+    background: rgb(239, 240, 246);
+    border-radius: 16px;
+    padding: 2px 3px 2px 3px;
+    width: 100%;
+  }
+  @media all and (max-width: 1100px) {
+    grid-template-columns: repeat(2, 47%);
+  }
+  @media all and (max-width: 600px) {
+    grid-template-columns: repeat(1, 94%);
   }
 }
 .back4 {
