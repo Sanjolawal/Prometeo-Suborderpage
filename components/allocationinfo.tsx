@@ -654,7 +654,8 @@ export default function Allocationinfo(props: {
             type="button"
             onClick={() => {
               setcounter(1);
-              setinput_products([{id:1}])
+              setcurrent_weight(0);
+              setinput_products([{id:1}]);
             }}
             className={allocationinfo.back4}
           >
