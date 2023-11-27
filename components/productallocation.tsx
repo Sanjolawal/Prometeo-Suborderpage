@@ -100,6 +100,8 @@ export default function Productallocation(props: any) {
           <Allocationinfo
             info={response}
             state={value}
+            show={setshow}
+            showing={show}
           />
         </div>
       ) : (

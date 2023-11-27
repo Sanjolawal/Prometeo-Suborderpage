@@ -1,0 +1,52 @@
+{
+  warehouse: 'Temporary storage facility', ///
+  storage: '30',
+  duration: 'Days',
+  arrival_date: '1/12/23',///
+  arrival_time: '1:30 pm',  ///
+  document_number: '312456',///
+  document_type: 'Invoice', ///
+  description: 'TV set of 20 inches',///
+  file: 'Task for react js position.pdf',
+  boxtype: 'Small',
+  quantity: '20',
+  product_name: [ null, 'Tv', 'Plasma' ],
+  product_quantity: [ null, '5', '5' ],
+  dimension: [ null, '30 x 40 x 50', '20 x 20 x 30' ],
+  weight: [ null, '5', '5' ]
+}
+date_to_storage  1667750400
+date_to_come_order  2023-11-15
+document_number  12345
+document_type  Invoice
+description   Order #12345 for gadgets
+
+[
+  {
+    _id: new ObjectId("65576b6d9673415608d286a4"),
+    company_name: 'Example Corp',
+    bin_tax_code: '123456789',
+    first_name: 'John',
+    second_name: 'Doe',
+    e_mail: 'john.doe@example.com',
+    telephone: '+1234567890',
+    user_address: {
+      zip_code: '10001',
+      street: '123 Example Street',
+      city: 'New York',
+      region: 'NY',
+      country: 'USA'
+    },
+    date: '2023-11-10',
+    time: '14:00',
+    products: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    documents: [ 'invoice.pdf', 'packing-list.pdf' ],
+    sub_orders: [ [Object], [Object] ]
+  }
+]

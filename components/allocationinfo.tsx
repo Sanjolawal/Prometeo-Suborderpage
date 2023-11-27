@@ -9,6 +9,8 @@ import plus from "@/public/plus.svg";
 export default function Allocationinfo(props: {
   info: [{ sub_orders: [{ types: []; boxes: [] }]; products: [] }];
   state: string;
+  show: React.Dispatch<React.SetStateAction<boolean>>;
+  showing: boolean;
 }) {
   type formvalues = {
     warehouse: string;
@@ -653,7 +655,7 @@ export default function Allocationinfo(props: {
           <button
             type="button"
             onClick={() => {
-              setcounter(1);
+              props.show(!props.showing);
             }}
             className={allocationinfo.back4}
           >
